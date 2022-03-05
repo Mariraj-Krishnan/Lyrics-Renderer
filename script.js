@@ -56,7 +56,7 @@ audio.addEventListener("play", () => {
     timeOutId.push(
       window.setTimeout(() => {
         container.textContent = lines[i];
-      }, timing[i] - delay)
+      }, timing[i]+100 - delay)
     );
   }
   played = true;
