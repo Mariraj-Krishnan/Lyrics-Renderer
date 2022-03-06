@@ -34,11 +34,14 @@ let played;
 let delay;
 
 audio.addEventListener("play", () => {
+
   timeOutId = [];
   delay = 0;
+
   lineIndex = timing.findIndex((el) => {
     return el > audio.currentTime * 1000;
   })-1;
+
   if (
     Math.floor(audio.currentTime * 1000) == Math.floor(audio.duration * 1000)
   ) {
@@ -46,12 +49,15 @@ audio.addEventListener("play", () => {
     delay = 0;
     played = false;
   }
-  If(lineIndex==-1)
+
+  If (lineIndex==-1)
     container.textContent = '';
   else 
-    container.textContent = lines[lineIndex]
+    container.textContent = lines[lineIndex];
+
   if (played)
     delay = audio.currentTime * 1000;
+
   for (let i = lineIndex + 1; i < timing.length; i++) {
     timeOutId.push(
       window.setTimeout(() => {
@@ -59,8 +65,11 @@ audio.addEventListener("play", () => {
       }, timing[i]+200 - delay)
     );
   }
+
   played = true;
+
 });
+
 audio.addEventListener("pause", () => {
   let id = window.setTimeout(() => {}, 0);
   while (id) {
