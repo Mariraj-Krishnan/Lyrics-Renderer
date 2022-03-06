@@ -40,7 +40,7 @@ audio.addEventListener("play", () => {
 
   lineIndex = timing.findIndex((el) => {
     return el > audio.currentTime * 1000;
-  })-1;
+  });
 
   if (
     Math.floor(audio.currentTime * 1000) == Math.floor(audio.duration * 1000)
@@ -50,12 +50,7 @@ audio.addEventListener("play", () => {
     played = false;
   };
 
-  if (lineIndex==-1) {
-    container.textContent = '';
-  }
-  else {
-    container.textContent = lines[lineIndex];
-  };
+  container.textContent = lines[lineIndex];
 
   if (played)
     delay = audio.currentTime * 1000;
