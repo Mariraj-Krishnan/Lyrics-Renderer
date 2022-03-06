@@ -50,10 +50,12 @@ audio.addEventListener("play", () => {
     played = false;
   }
 
-  If (lineIndex==-1)
+  If (lineIndex==-1) {
     container.textContent = '';
-  else 
+  }
+  else {
     container.textContent = lines[lineIndex];
+  }
 
   if (played)
     delay = audio.currentTime * 1000;
