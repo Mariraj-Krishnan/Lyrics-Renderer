@@ -52,8 +52,7 @@ audio.addEventListener("play", () => {
 
   if (lineIndex==-1) {
     container.textContent = '';
-  };
-
+  }
   else {
     container.textContent = lines[lineIndex];
   };
