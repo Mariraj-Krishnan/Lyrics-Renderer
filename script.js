@@ -38,7 +38,7 @@ audio.addEventListener("play", () => {
   delay = 0;
   lineIndex = timing.findIndex((el) => {
     return el > audio.currentTime * 1000;
-  });
+  })-1;
   if (
     Math.floor(audio.currentTime * 1000) == Math.floor(audio.duration * 1000)
   ) {
@@ -46,12 +46,11 @@ audio.addEventListener("play", () => {
     delay = 0;
     played = false;
   }
-  container.textContent = lines[lineIndex];
+  If(lineIndex==-1)
+    container.textContent = '';
+  else container.textContent = lines[lineIndex]
   if (played)
-    delay =
-      timing[lineIndex + 1] -
-      (timing[lineIndex + 1] - audio.currentTime * 1000);
-  console.log(timing[lineIndex + 1], audio.currentTime * 1000);
+    delay = audio.currentTime * 1000;
   for (let i = lineIndex + 1; i < timing.length; i++) {
     timeOutId.push(
       window.setTimeout(() => {
