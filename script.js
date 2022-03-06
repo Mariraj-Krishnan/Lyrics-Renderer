@@ -53,7 +53,7 @@ audio.addEventListener("play", () => {
   container.textContent = lines[lineIndex];
 
   if (played)
-    delay = audio.currentTime * 1000;
+    delay = timing[lineIndex] - (timing[lineIndex]-audio.currentTime * 1000);
 
   for (let i = lineIndex + 1; i < timing.length; i++) {
     timeOutId.push(
