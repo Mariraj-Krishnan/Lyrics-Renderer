@@ -1,4 +1,4 @@
-fetch("./lyrics.lrc")
+fetch("./lyrics2.lrc")
   .then((res) => res.text())
   .then((data) => {
     lyricsHandler(data);
