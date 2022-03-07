@@ -7,7 +7,7 @@ audio.onprogress = () => {
   });
 };
 
-fetch("./lyrics2.lrc")
+fetch("./lyrics.lrc")
   .then((res) => res.text())
   .then((data) => {
     lyricsHandler(data);
