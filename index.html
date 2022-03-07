@@ -18,6 +18,9 @@
         align-items: center;
         gap: 30px;
       }
+      h3 {
+        font-family: Arial, Helvetica, sans-serif;
+      }
       h2 {
         padding: 20px;
         background-color: #000000;
@@ -26,13 +29,21 @@
         font-family: "Cascadia Code", Courier, monospace;
       }
       audio {
+        display: none;
         width: 400px;
+      }
+      audio.loaded {
+        display: initial;
+      }
+      h3.loaded {
+        display: none;
       }
     </style>
   </head>
   <body>
+    <h3>Loading...</h3>
     <audio controls>
-      <source src="song2.mp3" />
+      <source src="song.mp3" />
     </audio>
     <h2></h2>
   </body>
