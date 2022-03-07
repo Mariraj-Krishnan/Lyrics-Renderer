@@ -5,7 +5,7 @@ audio.addEventListener("canplaythrough", () => {
   document.querySelector("h3").classList.add("loaded");
 });
 
-fetch("./lyrics.lrc")
+fetch("./lyrics2.lrc")
   .then((res) => res.text())
   .then((data) => {
     lyricsHandler(data);
