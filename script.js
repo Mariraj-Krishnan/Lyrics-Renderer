@@ -34,6 +34,7 @@ let played;
 let delay;
 
 audio.addEventListener("play", () => {
+audio.addEventListener("playing", () => {
   timeOutId = [];
   delay = 0;
   lineIndex =
@@ -62,7 +63,7 @@ audio.addEventListener("play", () => {
     );
   }
   played = true;
-});
+})});
 audio.addEventListener("pause", () => {
   let id = window.setTimeout(() => {}, 0);
   while (id) {
