@@ -1,9 +1,11 @@
 const audio = document.querySelector("audio");
 
-audio.addEventListener("canplaythrough", () => {
-  audio.classList.add("loaded");
-  document.querySelector("h3").classList.add("loaded");
-});
+audio.onprogress = () => {
+  audio.addEventListener("canplaythrough", () => {
+    audio.classList.add("loaded");
+    document.querySelector("h3").classList.add("loaded");
+  });
+};
 
 fetch("./lyrics2.lrc")
   .then((res) => res.text())
