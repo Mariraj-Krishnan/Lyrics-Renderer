@@ -1,4 +1,11 @@
-fetch("./lyrics2.lrc")
+const audio = document.querySelector("audio");
+
+audio.addEventListener("canplaythrough", () => {
+  audio.classList.add("loaded");
+  document.querySelector("h3").classList.add("loaded");
+});
+
+fetch("./lyrics.lrc")
   .then((res) => res.text())
   .then((data) => {
     lyricsHandler(data);
@@ -6,7 +13,6 @@ fetch("./lyrics2.lrc")
 
 const lines = [];
 const timing = [];
-const audio = document.querySelector("audio");
 const container = document.querySelector("h2");
 
 function lyricsHandler(lyrics) {
@@ -28,13 +34,13 @@ function lyricsHandler(lyrics) {
       );
   });
 }
+
 let lineIndex;
 let timeOutId = [];
 let played;
 let delay;
 
 audio.addEventListener("play", () => {
-audio.addEventListener("playing", () => {
   timeOutId = [];
   delay = 0;
   lineIndex =
@@ -63,7 +69,7 @@ audio.addEventListener("playing", () => {
     );
   }
   played = true;
-})});
+});
 audio.addEventListener("pause", () => {
   let id = window.setTimeout(() => {}, 0);
   while (id) {
