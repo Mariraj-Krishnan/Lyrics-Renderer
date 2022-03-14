@@ -17,7 +17,7 @@ const lines = [];
 const timing = [];
 const container = document.querySelector("h2");
 function randomColor() {
-  const colors = ['dodgerblue', 'orange', 'tomato', 'grey']
+  const colors = ['deepskyblue', 'orange', 'tomato', 'palevioletred']
   document.body.style.backgroundColor = colors[Math.floor(Math.random()*5)];
 }
 function lyricsHandler(lyrics) {
