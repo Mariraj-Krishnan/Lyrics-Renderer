@@ -69,7 +69,7 @@ audio.addEventListener("play", () => {
   for (let i = lineIndex + 1; i < timing.length; i++) {
     timeOutId.push(
       window.setTimeout(() => {
-        randomColor();
+        randomColor;
         container.textContent = lines[i];
       }, timing[i] - 100 - delay)
     );
