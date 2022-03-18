@@ -16,10 +16,8 @@ fetch("./lyrics2.lrc")
 const lines = [];
 const timing = [];
 const container = document.querySelector("h2");
-function randomColor() {
-  const colors = ['deepskyblue', 'orange', 'tomato', 'palevioletred']
-  document.body.style.backgroundColor = colors[Math.floor(Math.random()*5)];
-}
+const colors = ['deepskyblue', 'orange', 'tomato', 'palevioletred'];
+  
 function lyricsHandler(lyrics) {
   const match = lyrics.match(/\[[0-9][0-9]:[0-9][0-9].[0-9][0-9]\]/g);
   match.forEach((element, index) => {
@@ -69,7 +67,7 @@ audio.addEventListener("play", () => {
   for (let i = lineIndex + 1; i < timing.length; i++) {
     timeOutId.push(
       window.setTimeout(() => {
-        randomColor;
+        document.body.style.backgroundColor = colors[Math.floor(Math.random()*5)];
         container.textContent = lines[i];
       }, timing[i] - 100 - delay)
     );
