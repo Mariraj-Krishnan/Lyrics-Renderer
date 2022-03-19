@@ -69,7 +69,7 @@ audio.addEventListener("play", () => {
       window.setTimeout(() => {
         document.body.style.backgroundColor = colors[Math.floor(Math.random()*5)];
         container.textContent = lines[i];
-      }, timing[i] - 100 - delay)
+      }, timing[i] - delay)
     );
   }
   played = true;
